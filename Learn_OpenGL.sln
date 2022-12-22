@@ -6,6 +6,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C_OpenGL_三角形", "C_Ope
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "A_OpenGL_Utils", "A_OpenGL_Utils\A_OpenGL_Utils.vcxproj", "{21146B3B-3AE3-45DD-A826-331759B06D7F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "D_OpenGL_简单三角形纹理", "D_OpenGL_简单三角形纹理\D_OpenGL_简单三角形纹理.vcxproj", "{554824AA-F251-4063-AD9F-5FCE6138AA24}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "E_OpenGL_正方形纹理_EBO", "E_OpenGL_正方形纹理_EBO\E_OpenGL_正方形纹理_EBO.vcxproj", "{9973EBEA-9EBF-4310-957B-66A087A8EC89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -38,5 +42,21 @@ Global
 		{21146B3B-3AE3-45DD-A826-331759B06D7F}.Release|Win32.Build.0 = Release|Win32
 		{21146B3B-3AE3-45DD-A826-331759B06D7F}.Release|x64.ActiveCfg = Release|x64
 		{21146B3B-3AE3-45DD-A826-331759B06D7F}.Release|x64.Build.0 = Release|x64
+		{554824AA-F251-4063-AD9F-5FCE6138AA24}.Debug|Win32.ActiveCfg = Debug|Win32
+		{554824AA-F251-4063-AD9F-5FCE6138AA24}.Debug|Win32.Build.0 = Debug|Win32
+		{554824AA-F251-4063-AD9F-5FCE6138AA24}.Debug|x64.ActiveCfg = Debug|x64
+		{554824AA-F251-4063-AD9F-5FCE6138AA24}.Debug|x64.Build.0 = Debug|x64
+		{554824AA-F251-4063-AD9F-5FCE6138AA24}.Release|Win32.ActiveCfg = Release|Win32
+		{554824AA-F251-4063-AD9F-5FCE6138AA24}.Release|Win32.Build.0 = Release|Win32
+		{554824AA-F251-4063-AD9F-5FCE6138AA24}.Release|x64.ActiveCfg = Release|x64
+		{554824AA-F251-4063-AD9F-5FCE6138AA24}.Release|x64.Build.0 = Release|x64
+		{9973EBEA-9EBF-4310-957B-66A087A8EC89}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9973EBEA-9EBF-4310-957B-66A087A8EC89}.Debug|Win32.Build.0 = Debug|Win32
+		{9973EBEA-9EBF-4310-957B-66A087A8EC89}.Debug|x64.ActiveCfg = Debug|x64
+		{9973EBEA-9EBF-4310-957B-66A087A8EC89}.Debug|x64.Build.0 = Debug|x64
+		{9973EBEA-9EBF-4310-957B-66A087A8EC89}.Release|Win32.ActiveCfg = Release|Win32
+		{9973EBEA-9EBF-4310-957B-66A087A8EC89}.Release|Win32.Build.0 = Release|Win32
+		{9973EBEA-9EBF-4310-957B-66A087A8EC89}.Release|x64.ActiveCfg = Release|x64
+		{9973EBEA-9EBF-4310-957B-66A087A8EC89}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 EndGlobal
