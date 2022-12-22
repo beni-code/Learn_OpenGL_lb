@@ -1,1 +1,0 @@
-C:\Users\lib11oa\RiderProjects\Learn_OpenGL\C_OpenGL_三角形\x64\Debug\C_OpenGL_三角形.vcxproj.CopyComplete
