@@ -50,10 +50,10 @@ int main()
 #pragma endregion
 
     float vertices[] = {
-        -0.5f, -0.5f, 0.0f,
-        0.5f, -0.5f, 0.0f,
-        -0.5f, 0.5f, 0.0f,
-        0.5f, 0.5f, 0.0f
+        -0.5f, -0.5f, 0.0f, 0.1f, 0.7f, 0.7f, 0.0f, 0.0f, // 前三个为xyz坐标，中间三个是颜色rgb，后面两个是纹理坐标
+        0.5f, -0.5f, 0.0f, 0.6f, 0.6f, 0.6f, 1.0f, 0.0f,
+        -0.5f, 0.5f, 0.0f, 0.1f, 0.7f, 0.1f, 0.0f, 1.0f,
+        0.5f, 0.5f, 0.0f, 0.7f, 0.5f, 0.6f, 1.0f, 1.0f
     };
 
     // 需要绘制的索引
@@ -69,11 +69,12 @@ int main()
     glGenVertexArrays(1, &VAO);
     glBindVertexArray(VAO);
 
-    /*// 纹理的ID
-    GLuint texture;
-    glGenTextures(1, &texture);
+    // 纹理的ID
+    GLuint textureID;
+    glGenTextures(1, &textureID);
     // 绑定纹理
-    glBindTexture(GL_TEXTURE_2D, texture);
+    // glActiveTexture(GL_TEXTURE0); // 在绑定纹理之前先激活纹理单元0 因为默认激活纹理单元0，所以这里可以不手动激活
+    glBindTexture(GL_TEXTURE_2D, textureID);
 
     // S轴纹理环绕方式：重复
     glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,GL_REPEAT);
@@ -88,7 +89,7 @@ int main()
     // 加载一个图片
     int texWidth, texHeight; // 图片的宽高
     int nrChannels; // 图片颜色通道的个数
-    stbi_uc* texData = stbi_load("wall.jpg", &texWidth, &texHeight, &nrChannels, 0);
+    stbi_uc* texData = stbi_load("container.jpg", &texWidth, &texHeight, &nrChannels, 0);
 
     if (texData)
     {
@@ -101,13 +102,13 @@ int main()
          * 参数6：总是被设为0（历史遗留的问题）
          * 参数7：第七第八个参数定义了源图的格式和数据类型。我们使用RGB值加载这个图像，并把它们储存为char(byte)数组，我们将会传入对应值。
          * 参数8：最后一个参数是实际的图像数据。
-         #1#
+         */
         glTexImage2D(GL_TEXTURE_2D, 0,GL_RGB, texWidth, texHeight, 0,GL_RGB,GL_UNSIGNED_BYTE, texData);
         /**
          * Mipmap生成
          * 当调用glTexImage2D时，当前绑定的纹理对象就会被附加上纹理图像。然而，目前只有基本级别(Base-level)的纹理图像被加载了，如果要使用多级渐远纹理，我们必须手动设置所有不同的图像（不断递增第二个参数）
          * 或者，直接在生成纹理之后调用glGenerateMipmap。这会为当前绑定的纹理自动生成所有需要的多级渐远纹理。
-         #1#
+         */
         glGenerateMipmap(GL_TEXTURE_2D);
     }
     else
@@ -115,7 +116,7 @@ int main()
         std::cout << "Failed to load texture" << std::endl;
     }
 
-    stbi_image_free(texData);*/
+    stbi_image_free(texData);
 
     GLuint VBO;
     glGenBuffers(1, &VBO);
@@ -127,10 +128,22 @@ int main()
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices,GL_STATIC_DRAW);
 
-    glVertexAttribPointer(glGetAttribLocation(shaderProgram.ID, "aPosition"), 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float),
+    glVertexAttribPointer(glGetAttribLocation(shaderProgram.ID, "aPosition"), 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float),
                           (void*)0);
     // 启用顶点属性
     glEnableVertexAttribArray(glGetAttribLocation(shaderProgram.ID, "aPosition"));
+
+
+    glVertexAttribPointer(glGetAttribLocation(shaderProgram.ID, "aColor"), 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float),
+                          (void*)(3 * sizeof(float)));
+    // 启用顶点属性
+    glEnableVertexAttribArray(glGetAttribLocation(shaderProgram.ID, "aColor"));
+
+
+    glVertexAttribPointer(glGetAttribLocation(shaderProgram.ID, "aTexPosition"), 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float),
+                          (void*)(6 * sizeof(float)));
+    // 启用顶点属性
+    glEnableVertexAttribArray(glGetAttribLocation(shaderProgram.ID, "aTexPosition"));
 
     while (!glfwWindowShouldClose(window))
     {
