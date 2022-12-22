@@ -7,6 +7,18 @@
 
 #include "Shader.h"
 
+/**
+ * LearnOpenGL CN 在入门-纹理一章中少了一下内容
+ * 请注意，我们现在加载包含 alpha（透明）通道的 .png 图像。 这意味着我们现在需要使用 GL_RGBA 指定图像数据也包含一个 alpha 通道； 否则 OpenGL 将错误地解释图像数据。
+ * unsigned char *data = stbi_load("awesomeface.png", &width, &height, &nrChannels, 0);
+ * if (data)
+ * {
+ *      glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+ *      glGenerateMipmap(GL_TEXTURE_2D);
+ * }
+ *
+ */
+
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
