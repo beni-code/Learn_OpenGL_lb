@@ -12,6 +12,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "E_OpenGL_正方形纹理_EB
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "F_OpenGL_设置多个纹理_纹理单元", "F_OpenGL_设置多个纹理_纹理单元\F_OpenGL_设置多个纹理_纹理单元.vcxproj", "{5FD016A9-1006-429A-9F9F-66F18C412964}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "G_OpenGL_GLM变换", "G_OpenGL_GLM变换\G_OpenGL_GLM变换.vcxproj", "{709342C7-1624-4CB0-B6F1-459DB7F652F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -68,5 +70,13 @@ Global
 		{5FD016A9-1006-429A-9F9F-66F18C412964}.Release|Win32.Build.0 = Release|Win32
 		{5FD016A9-1006-429A-9F9F-66F18C412964}.Release|x64.ActiveCfg = Release|x64
 		{5FD016A9-1006-429A-9F9F-66F18C412964}.Release|x64.Build.0 = Release|x64
+		{709342C7-1624-4CB0-B6F1-459DB7F652F4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{709342C7-1624-4CB0-B6F1-459DB7F652F4}.Debug|Win32.Build.0 = Debug|Win32
+		{709342C7-1624-4CB0-B6F1-459DB7F652F4}.Debug|x64.ActiveCfg = Debug|x64
+		{709342C7-1624-4CB0-B6F1-459DB7F652F4}.Debug|x64.Build.0 = Debug|x64
+		{709342C7-1624-4CB0-B6F1-459DB7F652F4}.Release|Win32.ActiveCfg = Release|Win32
+		{709342C7-1624-4CB0-B6F1-459DB7F652F4}.Release|Win32.Build.0 = Release|Win32
+		{709342C7-1624-4CB0-B6F1-459DB7F652F4}.Release|x64.ActiveCfg = Release|x64
+		{709342C7-1624-4CB0-B6F1-459DB7F652F4}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 EndGlobal
